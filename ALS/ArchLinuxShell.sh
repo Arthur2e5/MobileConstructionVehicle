@@ -410,7 +410,7 @@ do
 	read -n1 -p "请输入1-2或99：" wb
 	echo ""
 	case $wb in
-	1）
+	1)
 		echo "sudo pacman -S --noconfirm firefox" >> continue.sh
 		clear
 		echo "请问您是否要安装Firefox的中文支持？安装后浏览器将改为中文界面。"
