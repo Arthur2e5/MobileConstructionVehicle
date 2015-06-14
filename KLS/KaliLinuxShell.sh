@@ -58,7 +58,6 @@ yes|apt-get autoremove
 yes|apt-get clean
 yes|apt-get autoclean
 dpkg -l |grep "^rc"|awk '{print $2}' |xargs aptitude -y purge
-find / -name core -print -exec rm -rf {} \; > /dev/null 2>&1
 cd /usr/share/man && rm -rf `ls | grep -v "man"` > /dev/null 2>&1
 rm -rf /var/log/*
 rm -rf /tmp/*
