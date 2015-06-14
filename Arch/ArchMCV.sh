@@ -22,8 +22,8 @@ mcvopts[c]=$"不运行 clear"
 mcv_cmdline_c(){ alias clear=:; }
 mcvarch_choice_error(){ echo $"选项错误！如果要不选，请选择 None。"; }
 # library
-MCV_INCLUDE='.'
-$MCV_INCLUDE ${MCV=../..}/common.sh
+mcv_import(){ if [ -e "$1" ]; then . "$1" || echo non-zero ret $1 $?; else echo Library $1 not found; exit 1; fi; }
+mcv_import "${MCV=$(dirname "$0")/..}/common.sh"
 # start
 reset
 echo $"欢迎您来到Arch Linux Shell（快速设置）"
