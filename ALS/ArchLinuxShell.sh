@@ -464,7 +464,6 @@ done
 
 reset
 mv continue.sh /home/${usrnm}/continue.sh
-#chmod a+x /home/${usrnm}/continue.sh
 chmod 777 /home/${usrnm}/continue.sh
 rm -rf /var/log/*
 rm -rf /var/tmp/*
