@@ -79,7 +79,7 @@ mcvopt="${!mcvopts[*]}" # 移除空格
 while getopts "vq${mcvopt// }"; do
 	case $opt in
 		(v)	((mcv_verbose++));;
-		(n) ((mcv_verbose--));;
+		(n)	((mcv_verbose--));;
 		(*)	mcv_cmdline_$opt;;
 	esac
 done
