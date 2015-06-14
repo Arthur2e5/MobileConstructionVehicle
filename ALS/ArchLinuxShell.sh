@@ -98,7 +98,7 @@ do
 		echo "" >> continue.sh
 		break
 	elif [ ${yaourt} = N ] || [ ${yaourt} = n ];then
-		echo "不安装Yaourt" >> continue.sh
+		echo "#不安装Yaourt" >> continue.sh
 		break
 	fi
 done
@@ -118,8 +118,7 @@ do
 		echo "#安装zsh" >> continue.sh
 		echo "sudo pacman -S --noconfirm  zsh" >> continue.sh
 		echo "git clone git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh" >> continue.sh
-		echo "rm ~/.zshrc" >> continue.sh
-		echo "cp ~/.oh-my-zsh/templates/zshrc.zsh-template ~/.zshrc" >> continue.sh
+		echo "cp -f ~/.oh-my-zsh/templates/zshrc.zsh-template ~/.zshrc" >> continue.sh
 		echo "echo "${usrpasswd}"|chsh -s /bin/zsh" >> continue.sh
 		echo "" >> continue.sh
 		break
@@ -149,8 +148,8 @@ while true
 do
 	read -n1 -p "请输入1-5：" choose
 	echo ""
-	if [ ${choose} = 1 ];then
-		chose=gnome
+	case choose in:
+	1)	chose=gnome
 		echo "echo "exec gnome-session" >> ~/.xinitrc" >> continue.sh
 		echo "sudo pacman -S --noconfirm gnome" >> continue.sh
 		clear
@@ -169,18 +168,16 @@ do
 		done
 		echo "" >> continue.sh
 		break
-	fi
+	;;
 
-	if [ ${choose} = 2 ];then
-		chose=plasma
+	2)	chose=plasma
 		echo "echo "exec startkde" >> ~/.xinitrc" >> continue.sh
 		echo "sudo pacman -S --noconfirm plasma" >> continue.sh
 		echo "" >> continue.sh
 		break
-	fi
+	;;
 
-	if [ ${choose} = 3 ];then
-		chose=xfce4
+	3)	chose=xfce4
 		echo "echo "exec startxfce4" >> ~/.xinitrc" >> continue.sh
 		echo "sudo pacman -S --noconfirm xfce4" >> continue.sh
 		clear
@@ -199,10 +196,9 @@ do
 		done
 		echo "" >> continue.sh
 		break
-	fi
+	;;
 
-	if [ ${choose} = 4 ];then
-		chose=cinnamon
+	4)	chose=cinnamon
 		echo "echo "exec cinnamon-session" >> ~/.xinitrc" >> continue.sh
 		echo "sudo pacman -S --noconfirm cinnamon" >> continue.sh
 		clear
@@ -223,10 +219,9 @@ do
 		done
 		echo "" >> continue.sh
 		break
-	fi
+	;;
 
-	if [ ${choose} = 5 ];then
-		chose=mate
+	5)	chose=mate
 		echo "echo "exec mate-session" >> ~/.xinitrc" >> continue.sh
 		echo "sudo pacman -S --noconfirm mate" >> continue.sh
 		clear
@@ -245,12 +240,13 @@ do
 		done
 		echo "" >> continue.sh
 		break
-	fi
+	;;
 
-	if [ ${wb} = 99 ];then
+	*)
 		echo "#不安装桌面环境" >> continue.sh
 		break
-	fi
+	;;
+	esac
 done
 
 clear
