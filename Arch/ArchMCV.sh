@@ -23,7 +23,7 @@ mcv_cmdline_c(){ alias clear=:; }
 mcvarch_choice_error(){ echo $"选项错误！如果要不选，请选择 None。"; }
 # library
 MCV_INCLUDE='.'
-$MCV_INCLUDE $MCV/common.sh
+$MCV_INCLUDE ${MCV=../..}/common.sh
 # start
 reset
 echo $"欢迎您来到Arch Linux Shell（快速设置）"
