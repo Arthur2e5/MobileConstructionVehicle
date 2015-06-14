@@ -148,7 +148,7 @@ while true
 do
 	read -n1 -p "请输入1-5：" choose
 	echo ""
-	case $choose in:
+	case $choose in
 	1)	chose=gnome
 		echo "echo "exec gnome-session" >> ~/.xinitrc" >> continue.sh
 		echo "sudo pacman -S --noconfirm gnome" >> continue.sh
