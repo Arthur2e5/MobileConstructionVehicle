@@ -143,7 +143,7 @@ done
 
 clear
 cat << EOF
-LPIL/ALS/ArchLinuxShell.shecho "现在请您选择一个桌面环境：我们默认提供Gnome、3Plasma（KDE5）、Xfce4、Cinnamon、和Mate
+现在请您选择一个桌面环境：我们默认提供Gnome、3Plasma（KDE5）、Xfce4、Cinnamon、和Mate
 
 如果没有您需要的（如窗口管理器，我们将在下个版本添加）或是您不需要桌面环境
 
